@@ -59,40 +59,91 @@
   background-position: center bottom;
 }
 
-/* Universal style end */
-/* Includes */
+/* navigation headeer*/
 .navigation {
-  background-color: #3d3d3d;
+  background-color: #333;
   color: #fff;
-  padding: 20px 0;
+  padding: 10px;
+  text-align: center;
+  position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* Menyusun .centered-text dan .titi3 di kedua sisi */
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999; /* Menentukan nilai z-index tinggi */
-  box-shadow: 0px 3px 15px rgb(228, 228, 228);
 }
 
 .centered-text {
-  font-size: 24px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  margin-left:  auto;
+  margin-right: auto;
 }
-@media (max-width: 1600px){
-  .centered-text{
-    font-size: 1.4em;
+
+.titi3 {
+  margin-left: 2%;
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  margin-left: auto; /* Memindahkan .menu-icon ke kanan */
+}
+
+.menu-icon,
+.close-icon {
+  font-size: 27px;
+  cursor: pointer;
+}
+.close-icon{
+  color: rgb(255, 255, 255);
+  margin-right: 10%;
+  margin-bottom: 15%;
+  padding-bottom: 20%;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #111111c4;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align: right;
+  z-index: 999; /* Atur z-index agar lebih tinggi dari elemen lain */
+}
+
+
+.menu-link {
+  padding: 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+  background-color: #777;
+  padding-right: 20%;
+}
+
+.menu-link:hover {
+  color: #52b0fd;
+}
+
+@media (max-width: 520px) {
+  .menu-icon,
+  .close-icon {
+    font-size: 18px;
+    margin-bottom: 5%;
+    font-size: 25px;
   }
-}
-@media (max-width: 1250px){
-  .centered-text{
-  font-size: 1.3em;
+
+  .sidebar {
+    padding-top: 40px;
   }
-}
-@media (max-width: 520px){
-  .centered-text{
-  font-size: 1.2em;
+
+  .menu-link {
+    font-size: 19px;
   }
 }
 /* pamflet */
