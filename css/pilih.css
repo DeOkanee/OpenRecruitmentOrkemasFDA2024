@@ -1,0 +1,157 @@
+.text-open {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
+.text-open h1 {
+  font-size: 2em;
+}
+.text-open p {
+  font-size: 1.6em;
+  margin-top: -22px;
+}
+
+.isi-card {
+  margin: 5%;
+}
+
+.card-slider {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tiga kolom dengan lebar yang sama */
+  gap: 50px 30px; /* Jarak antara kartu */
+  justify-content: center; /* Pusatkan kartu secara horizontal */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.589);
+   /* Tambahkan properti untuk animasi */
+   opacity: 0;
+   transform: translateY(20px);
+   transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.card.visible {
+  /* Tambahkan properti untuk card yang terlihat */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card img {
+  margin-top: 15px;
+  max-width: 30%;
+  border-radius: 50px;
+}
+.card h2 {
+  margin-top: 10px;
+  font-size: 25px;
+}
+.card a {
+  text-decoration: none; /* Menghilangkan garis bawah default pada tautan */
+}
+
+.card button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #cfcfcf;
+  color: #131313;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.card button:hover {
+  background-color: #292929;
+  color: #ddd;
+}
+@media (max-width: 768px) {
+  .card-slider {
+    grid-template-columns: repeat(2,  1fr ); /* Tiga kolom jika lebar layar <= 1250px */
+  }
+  .card {
+    margin: 0 28px;
+    padding: 15px;
+  }
+  .card img {
+    max-width: 40%;
+    border-radius: 50px;
+  }
+  .card h2 {
+    font-size: 20px;
+  }
+  .card bottom {
+    padding: 5px 10px;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 520px) {
+  .card-slider {
+    grid-template-columns: 1fr; /* Mengubah menjadi satu kolom */
+  }
+
+  .text-open {
+    position: sticky;
+    top: 0;
+    background-color: #706e6e;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-bottom: 10%;
+    margin-top: 0;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.562);
+    z-index: 999;
+  }
+
+  .text-open h1 {
+    font-size: 1.4em;
+  }
+  .text-open p {
+    font-size: 1.3em;
+    margin-top: -22px;
+  }
+
+  .card {
+    margin: 0 30px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.445);
+  }
+
+  .card img {
+    margin-top: 15px;
+    max-width: 39%;
+    border-radius: 50px;
+  }
+  .card h2 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 25px;
+  }
+  .card button {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    display: inline-block;
+    padding: 9px 18px;
+    font-size: 17px;
+    background-color: #cfcfcf;
+    color: #161616;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  .kartu-pilihan {
+    padding-bottom: 25px;
+  }
+}
