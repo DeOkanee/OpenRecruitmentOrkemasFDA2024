@@ -201,7 +201,10 @@
 			</div>
 		</div>
 	</section>
-	<section>
+	<section id="pertanyaan">
+		<div class="text" onclick="toggleContactForm()">Ada Pertanyaan?</div>
+	  </section>
+	  <section id="contact-form-section" style="display: none;">
 		<div class="contact-form">
 			<h2>Contact Us</h2>
 			<form action="https://formsubmit.co/wwwxx013@gmail.com" method="POST">
@@ -229,6 +232,7 @@
 			</form>
 		  </div>		
 	</section>
+
 	<!-- Social -->
 	<!--Footer-->
 		<div class="footer-bottom">
@@ -238,6 +242,14 @@
 		</div>
 	</footer>
 	<!-- Footer end -->
+	<!--memunculkan kotak bawah-->
+	<script>
+		function toggleContactForm() {
+		  var contactFormSection = document.getElementById("contact-form-section");
+		  contactFormSection.style.display = (contactFormSection.style.display === "none" || contactFormSection.style.display === "") ? "block" : "none";
+		}
+	  </script>
+	  
 	<!--main zoom gambar-->
 	<script>
 		lightbox.option({
