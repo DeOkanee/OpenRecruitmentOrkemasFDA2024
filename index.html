@@ -233,26 +233,35 @@
 	<!--MUNCUL AWAL-->
 	<script>
 		const swals = Swal.mixin({
-        cancelButtonColor: "#DC143C",
-        confirmButtonColor: "#00008B",
-        allowOutsideClick: true,
-      });
-
+		  cancelButtonColor: "#DC143C",
+		  confirmButtonColor: "#00008B",
+		  allowOutsideClick: true,
+		});
+	  
 		async function start() {
-		const imageUrl = './images/img.jpg'
-		  await swals.fire({
-			imageUrl: imageUrl,
-  			imageWidth: 400,
- 			imageHeight: 200,
- 			imageAlt: 'Custom image',
-			title:"Om Swastyastu",
-          text: "Orkemas FDA Telah Membuka Open Recruitment, ayo daftarkan dirimu dan menjadi bagian dari Orkemas FDA!!",
-		  });
+		  const hasPopupBeenShown = localStorage.getItem("popupShown");
+	  
+		  if (!hasPopupBeenShown) {
+			const imageUrl = './images/img.jpg';
+			await swals.fire({
+			  imageUrl: imageUrl,
+			  imageWidth: 400,
+			  imageHeight: 200,
+			  imageAlt: 'Custom image',
+			  title: "Om Swastyastu",
+			  text: "Orkemas FDA Telah Membuka Open Recruitment, ayo daftarkan dirimu dan menjadi bagian dari Orkemas FDA!!",
+			});
+	  
+			localStorage.setItem("popupShown", "true");
+		  }
+	  
 		  setTimeout(mulai, 900);
 		  play();
 		}
+	  
 		start();
 	  </script>
+	  
 	<!--CLOSE PENDAFTARAN-->
 
 </body>
