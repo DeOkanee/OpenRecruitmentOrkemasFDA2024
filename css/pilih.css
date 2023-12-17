@@ -8,7 +8,7 @@
 }
 .text-open p {
   font-size: 1.6em;
-  margin-top: -22px;
+  margin-top: -10px;
 }
 
 .isi-card {
@@ -88,6 +88,10 @@
   .card h2 {
     font-size: 20px;
   }
+  .text-open p {
+    font-size: 1.3em;
+    margin-top: -14px;
+  }
   .card bottom {
     padding: 5px 10px;
     font-size: 8px;
@@ -118,7 +122,7 @@
   }
   .text-open p {
     font-size: 1.3em;
-    margin-top: -22px;
+    margin-top: -6px;
   }
 
   .card {
