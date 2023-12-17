@@ -288,34 +288,37 @@
 	<!--MUNCUL AWAL-->
 	<script>
 		const swals = Swal.mixin({
-		  cancelButtonColor: "#DC143C",
-		  confirmButtonColor: "#00008B",
-		  allowOutsideClick: true,
+			cancelButtonColor: "#DC143C",
+			confirmButtonColor: "#00008B",
+			allowOutsideClick: true,
 		});
-	  
+	
 		async function start() {
-		  const hasPopupBeenShown = localStorage.getItem("popupShown");
-	  
-		  if (!hasPopupBeenShown) {
-			const imageUrl = './images/img.jpg';
-			await swals.fire({
-			  imageUrl: imageUrl,
-			  imageWidth: 400,
-			  imageHeight: 200,
-			  imageAlt: 'Custom image',
-			  title: "Om Swastyastu",
-			  text: "Orkemas FDA Telah Membuka Open Recruitment, ayo daftarkan dirimu dan menjadi bagian dari Orkemas FDA!!",
-			});
-	  
-			localStorage.setItem("popupShown", "true");
-		  }
-	  
-		  setTimeout(mulai, 900);
-		  play();
+			const hasPopupBeenShown = localStorage.getItem("popupShown");
+	
+			if (!hasPopupBeenShown) {
+				const imageUrl = './images/img.jpg';
+				await swals.fire({
+					imageUrl: imageUrl,
+					imageWidth: 400,
+					imageHeight: 200,
+					imageAlt: 'Custom image',
+					title: "Om Swastyastu",
+					text: "Orkemas FDA Telah Membuka Open Recruitment, ayo daftarkan dirimu dan menjadi bagian dari Orkemas FDA!!",
+				});
+	
+				localStorage.setItem("popupShown", "true");
+			}
+	
+			// Setelah 4 detik, menuju ke Instagram
+			setTimeout(() => {
+				window.location.href = "https://www.instagram.com/bemfda?igshid=NGVhN2U2NjQ0Yg==";
+			}, 3000);
 		}
-	  
+	
 		start();
-	  </script>
+	</script>
+	
 	  
 	<!--CLOSE PENDAFTARAN-->
 
