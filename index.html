@@ -294,11 +294,12 @@
 		});
 	
 		async function start() {
-			const hasPopupBeenShown = localStorage.getItem("popupShown");
+			const hasUserClickedOk = localStorage.getItem("userClickedOk");
+			const hasRedirectedToInstagram = localStorage.getItem("redirectedToInstagram");
 	
-			if (!hasPopupBeenShown) {
+			if (!hasUserClickedOk && !hasRedirectedToInstagram) {
 				const imageUrl = './images/img.jpg';
-				await swals.fire({
+				const result = await swals.fire({
 					imageUrl: imageUrl,
 					imageWidth: 400,
 					imageHeight: 200,
@@ -307,17 +308,23 @@
 					text: "Orkemas FDA Telah Membuka Open Recruitment, ayo daftarkan dirimu dan menjadi bagian dari Orkemas FDA!!",
 				});
 	
-				localStorage.setItem("popupShown", "true");
-			}
+				if (result.isConfirmed) {
+					localStorage.setItem("userClickedOk", "true");
+				}
 	
-			// Setelah 4 detik, menuju ke Instagram
-			setTimeout(() => {
-				window.location.href = "https://www.instagram.com/bemfda?igshid=NGVhN2U2NjQ0Yg==";
-			}, 3000);
+				// Setelah mengklik "OK", lakukan pengalihan ke Instagram
+				if (!hasRedirectedToInstagram) {
+					localStorage.setItem("redirectedToInstagram", "true");
+					setTimeout(() => {
+						window.location.href = "https://www.instagram.com/bemfda?igshid=NGVhN2U2NjQ0Yg==";
+					}, 4000);
+				}
+			}
 		}
 	
 		start();
 	</script>
+	
 	
 	  
 	<!--CLOSE PENDAFTARAN-->
