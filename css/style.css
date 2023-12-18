@@ -69,19 +69,25 @@
   display: flex;
   justify-content: space-between; /* Menyusun .centered-text dan .titi3 di kedua sisi */
   align-items: center;
+  top: 0;
+  z-index: 888;
+  position: sticky;
 }
 
 .centered-text {
   display: flex;
   align-items: center;
-  margin-left:  auto;
-  margin-right: auto;
+  position: absolute; /* Menggunakan position: absolute; */
+  left: 50%; /* Meletakkan elemen di tengah horizontal */
+  transform: translateX(-50%); /* Menggeser elemen sejauh setengah dari lebar elemen itu sendiri */
+  z-index: 1;
 }
 
 .titi3 {
-  margin-left: 2%;
+  margin-left: auto;
   display: flex;
   align-items: center;
+  z-index: 2;
 }
 
 .menu-icon {
@@ -93,7 +99,8 @@
   font-size: 27px;
   cursor: pointer;
 }
-.close-icon{
+
+.close-icon {
   color: rgb(255, 255, 255);
   margin-right: 10%;
   margin-bottom: 15%;
@@ -111,9 +118,8 @@
   transition: 0.5s;
   padding-top: 60px;
   text-align: right;
-  z-index: 999; /* Atur z-index agar lebih tinggi dari elemen lain */
+  z-index: 1000; /* Atur z-index agar lebih tinggi dari elemen lain */
 }
-
 
 .menu-link {
   padding: 15px;
@@ -131,9 +137,8 @@
 }
 
 @media (max-width: 520px) {
-  .navigation{
+  .navigation {
     padding: 12px 0;
-
   }
   .menu-icon,
   .close-icon {
@@ -141,19 +146,21 @@
     margin-bottom: 5%;
     font-size: 25px;
   }
-  .titi3{
+  .titi3 {
     margin-right: 10px;
   }
   .sidebar {
     padding-top: 40px;
   }
-  .centered-text{
+  .centered-text {
     font-size: 17px;
+    width: 80%;
   }
   .menu-link {
     font-size: 19px;
   }
 }
+
 /* pamflet */
 .fh5co-top-banner {
   position: relative;
@@ -300,7 +307,7 @@
   .top-banner__inner .top-banner__image {
     width: 70%;
     margin-bottom: 20px;
-    margin-top: -5%;
+    margin-top: -7%;
   }
 }
 @media (max-width: 768px) {
