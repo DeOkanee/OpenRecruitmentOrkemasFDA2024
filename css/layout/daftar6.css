@@ -4,55 +4,59 @@
   font-family: "Calisto-MT";
 }
 #header {
-    background-color: #706e6e;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(95, 95, 95, 0.671);
-    transition: top 0.3s; /* Efek transisi untuk animasi smooth */
-  }
-  
+  background-color: #706e6e;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(95, 95, 95, 0.671);
+  transition: top 0.3s; /* Efek transisi untuk animasi smooth */
+}
+
+#header a {
+  border-radius: 8px;
+  text-align: center;
+  padding: 8px 15px;
+  margin-left: 3%;
+  background-color: aliceblue;
+  text-decoration: none;
+  color: rgb(26, 26, 26);
+  font-size: 20px;
+  position: relative; /* Tambahkan properti position: relative; */
+  z-index: 2; /* Tambahkan properti z-index untuk mengatur tingkat kedalaman */
+}
+
+#header a:hover {
+  background-color: aqua;
+}
+
+.text-atas {
+  font-size: 16px;
+  position: fixed;
+  left: 50%; /* Ubah menjadi 50% untuk kedua elemen */
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 1; /* Tambahkan properti z-index untuk mengatur tingkat kedalaman */
+  color: white; /* Tambahkan warna teks sesuai kebutuhan */
+}
+
+/* Style untuk header yang fixed */
+#header.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+@media (max-width: 520px) {
   #header a {
-    border-radius: 8px;
-    text-align: center;
-    padding: 8px 15px;
-    margin-left: 3%;
-    background-color: aliceblue;
-    text-decoration: none;
-    color: rgb(26, 26, 26);
-    font-size: 20px;
+      font-size: 15px;
+      padding: 7px 10px;
   }
-  
-  #header a:hover {
-    background-color: aqua;
-  }
-  
-  .text-atas {
-    margin: 0 auto; /* Untuk menggeser ke tengah */
-    color: white; /* Tambahkan warna teks sesuai kebutuhan */
-    text-align: center; /* Tengahkan teks */
-    font-size: 16px;
-  }
-  
-  /* Style untuk header yang fixed */
-  #header.fixed {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-  @media (max-width: 520px){
-    #header a{
-        font-size: 15px;
-        padding: 7px 10px;
-    }
-    .text-atas{
-        font-size: 16px;
-        margin: 0 auto;
-        margin-left: 20%; 
-    }
-  }
+}
+
+
+
 /*bagian img*/
 .post {
     margin-top: 5%;

@@ -73,7 +73,7 @@
   background-color: #292929;
   color: #ddd;
 }
-@media (max-width: 768px) {
+@media (max-width: 926px) {
   .card-slider {
     grid-template-columns: repeat(2,  1fr ); /* Tiga kolom jika lebar layar <= 1250px */
   }
@@ -83,14 +83,13 @@
   }
   .card img {
     max-width: 40%;
-    border-radius: 50px;
+    border-radius: 50%;
   }
   .card h2 {
     font-size: 20px;
   }
   .text-open p {
     font-size: 1.3em;
-    margin-top: -14px;
   }
   .card bottom {
     padding: 5px 10px;
@@ -107,8 +106,7 @@
     position: sticky;
     top: 0;
     background-color: #706e6e;
-    padding-top: 20px;
-    padding-bottom: 10px;
+    padding-top: 5px;
     text-align: center;
     margin-bottom: 10%;
     margin-top: 0;
@@ -122,7 +120,9 @@
   }
   .text-open p {
     font-size: 1.3em;
-    margin-top: -6px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+
   }
 
   .card {
@@ -136,8 +136,8 @@
 
   .card img {
     margin-top: 15px;
-    max-width: 39%;
-    border-radius: 50px;
+    max-width: 37%;
+    border-radius: 50%;
   }
   .card h2 {
     margin-top: 15px;
