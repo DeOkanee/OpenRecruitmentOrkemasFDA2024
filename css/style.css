@@ -77,12 +77,13 @@
 .centered-text {
   display: flex;
   align-items: center;
-  position: absolute; /* Menggunakan position: absolute; */
-  left: 50%; /* Meletakkan elemen di tengah horizontal */
-  transform: translateX(-50%); /* Menggeser elemen sejauh setengah dari lebar elemen itu sendiri */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1;
+  font-size: 18px; /* Sesuaikan dengan ukuran yang diinginkan */
+  text-align: center;
 }
-
 .titi3 {
   margin-left: auto;
   display: flex;
@@ -92,6 +93,7 @@
 
 .menu-icon {
   margin-left: auto; /* Memindahkan .menu-icon ke kanan */
+  
 }
 
 .menu-icon,
@@ -135,10 +137,18 @@
 .menu-link:hover {
   color: #52b0fd;
 }
-
+@media (max-width: 967px){
+  .menu-link{
+    padding-right: 10%;
+  }
+  .centered-text br {
+    display: inline;
+  }
+}
 @media (max-width: 520px) {
   .navigation {
     padding: 12px 0;
+    top: 0;
   }
   .menu-icon,
   .close-icon {
@@ -154,11 +164,19 @@
   }
   .centered-text {
     font-size: 17px;
+    text-align: center;
+  }
+
+  .centered-text br {
+    display: inline;
   }
   .menu-link {
     font-size: 19px;
   }
 }
+
+
+
 
 /* pamflet */
 .fh5co-top-banner {
