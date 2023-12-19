@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
           // Menandai bahwa pop-up sudah ditampilkan
           localStorage.setItem('popupShown', 'true');
-      }, 6000); // 6000 milidetik = 6 detik
+      }, 15000); // 6000 milidetik = 6 detik
   }
 
   // Event listener untuk menampilkan pop-up saat Info diklik
