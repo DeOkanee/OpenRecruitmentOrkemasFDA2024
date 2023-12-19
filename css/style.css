@@ -207,15 +207,16 @@
 .fh5co-top-banner .site-container {
   position: relative;
   z-index: 1;
+  
 }
 @media (max-width: 1600px) {
   .fh5co-top-banner {
-    padding-top: 180px;
+    padding-top: 80px;
   }
 }
 @media (max-width: 1250px) {
   .fh5co-top-banner {
-    padding-top: 130px;
+    padding-top: 100px;
   }
 }
 @media (max-width: 520px) {
