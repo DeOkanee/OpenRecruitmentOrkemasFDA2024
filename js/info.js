@@ -11,24 +11,39 @@ document.addEventListener('DOMContentLoaded', function () {
     // Cek apakah pop-up sudah ditampilkan sebelumnya
     const isPopupShown = localStorage.getItem('popupShown');
   
-    // Hitung selisih waktu antara sekarang dan waktu target
-    const currentTime = new Date();
-    const timeDiff = targetDate - currentTime;
+    // ID interval untuk memperbarui waktu mundur setiap detik
+    let countdownInterval;
   
-    // Menampilkan SweetAlert setelah waktu tertentu jika belum ditampilkan sebelumnya
-    if (!isPopupShown && timeDiff > 0) {
-      setTimeout(function () {
-        // Menampilkan SweetAlert dengan info pendaftaran dan wawancara
-        Swal.fire({
-          icon: "info",
-          title: "Info",
-          html: `<p>1. Pendaftaran: ${pendaftaranDate}</p><p>2. Wawancara: ${wawancaraDate}</p>`,
-          footer: `Pendaftaran Tersisa: ${formatTimeDiff(timeDiff)}`, // Panggil fungsi formatTimeDiff
-        });
+    // Function untuk memperbarui dan menampilkan waktu mundur setiap detik
+    function updateCountdown() {
+      const currentTime = new Date();
+      const timeDiff = targetDate - currentTime;
   
-        // Menandai bahwa pop-up sudah ditampilkan
-        localStorage.setItem('popupShown', 'true');
-      }, timeDiff);
+      // Jika waktu mundur habis, hentikan pembaruan dan pop-up
+      if (timeDiff <= 0) {
+        clearInterval(countdownInterval);
+        Swal.close();
+        return;
+      }
+  
+      // Memformat selisih waktu menjadi format yang lebih mudah dibaca
+      const formattedTimeDiff = formatTimeDiff(timeDiff);
+  
+      // Menampilkan SweetAlert dengan info pendaftaran, wawancara, dan waktu mundur yang terus berubah
+      Swal.update({
+        title: "Info",
+        html: `<p>1. Pendaftaran: ${pendaftaranDate}</p><p>2. Wawancara: ${wawancaraDate}</p>`,
+        footer: `Pendaftaran Tersisa: ${formattedTimeDiff}`,
+      });
+    }
+  
+    // Fungsi untuk memformat selisih waktu menjadi format yang lebih mudah dibaca
+    function formatTimeDiff(timeDiff) {
+      const hours = Math.floor(timeDiff / 3600000);
+      const minutes = Math.floor((timeDiff % 3600000) / 60000);
+      const seconds = Math.floor((timeDiff % 60000) / 1000);
+  
+      return `${hours} jam ${minutes} menit ${seconds} detik`;
     }
   
     // Event listener untuk menampilkan pop-up saat Info diklik
@@ -40,16 +55,14 @@ document.addEventListener('DOMContentLoaded', function () {
         icon: "info",
         title: "Info",
         html: `<p>1. Pendaftaran: ${pendaftaranDate}</p><p>2. Wawancara: ${wawancaraDate}</p>`,
-        footer: `Pendaftaran Tersisa: ${formatTimeDiff(timeDiff)}`, // Panggil fungsi formatTimeDiff
+        footer: `Pendaftaran Tersisa: ${formatTimeDiff(targetDate - new Date())}`,
       });
+  
+      // Memulai pembaruan waktu mundur setiap detik
+      countdownInterval = setInterval(updateCountdown, 1000);
+  
+      // Menandai bahwa pop-up sudah ditampilkan
+      localStorage.setItem('popupShown', 'true');
     });
   
-    // Fungsi untuk memformat selisih waktu menjadi format yang lebih mudah dibaca
-    function formatTimeDiff(timeDiff) {
-      const hours = Math.floor(timeDiff / 3600000);
-      const minutes = Math.floor((timeDiff % 3600000) / 60000);
-      const seconds = Math.floor((timeDiff % 60000) / 1000);
-  
-      return `${hours} jam ${minutes} menit ${seconds} detik`;
-    }
   });
