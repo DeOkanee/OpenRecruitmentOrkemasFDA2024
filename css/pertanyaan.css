@@ -1,6 +1,7 @@
 #pertanyaan {
     text-align: center;
     cursor: pointer;
+    margin-bottom:15px ;
   }
   
   #pertanyaan .text {
