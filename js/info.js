@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const infoButton = document.getElementById('infoButton');
 
   // Daftar pendaftaran dan wawancara
-  const pendaftaranDate = 'Sudah Tutup pada pukul 18:00 Tanggal 22 Des 2023';
+  const pendaftaranDate = 'Sudah Tutup pada \n pukul 18:00 Tanggal 22 Des 2023';
   const wawancaraDate = 'Tanggal 23-24 Des 2023';
 
   // Cek apakah pop-up sudah ditampilkan sebelumnya
