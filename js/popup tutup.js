@@ -1,7 +1,7 @@
 // Fungsi untuk menampilkan SweetAlert saat tombol "DAFTAR" diklik
 function showPopup(hmjName, href) {
   Swal.fire({
-    icon: "info",
+    icon: "error",
     title: "Oops...",
     text: "Pendaftaran " + hmjName + " sudah tidak menerima jawaban lagi!",
   });
